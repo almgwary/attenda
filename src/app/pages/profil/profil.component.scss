@@ -1,0 +1,32 @@
+.profile-img-container {
+    width: 94pt;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}
+
+.name {
+    text-align: center;
+    margin: 20pt auto 10pt;
+}
+
+.id {
+    background: #d2d2d2;
+    width: 51pt;
+    width: fit-content;
+    max-width: 100pt;
+    padding: 2pt 13pt;
+    border-radius: 26pt;
+    display: block;
+    margin: auto;
+}
+
+.logout-btn {
+    float: right;
+    margin: 10pt;
+}

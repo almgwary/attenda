@@ -1,15 +1,15 @@
 
-<button type="button" class="btn btn-secondary" (click)="logout()">logout</button>
+<button type="button" class="btn btn-secondary logout-btn" (click)="logout()">logout</button>
 
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 mt-3">
         <span class="profile-img-container">
             <img [src]="user.img" [alt]="user.img"></span>
     </div>
     <div class="col-md-12">
-        <h3 class="name">{{user.name}}</h3>
-        <h3 class="id">{{user.id}}</h3>
+        <h3 class="name"> ❤️  {{user.name}} 🟩</h3>
+        <span class="id">🆔 {{user.id}}</span>
     </div>
 </div>
 
