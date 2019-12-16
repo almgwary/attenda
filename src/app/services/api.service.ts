@@ -26,4 +26,24 @@ export class ApiService {
     });
 
   }
+
+
+  getProfileData(userId) {
+    return new Observable((observer) => {
+
+      const data: any = {  
+        days : ['sa', 'su', 'mo', 'tu', 'we', 'th', 'fr'],
+        working: [65, 59, 80, 81, 56, 55, 40],
+        breaking: [28, 48, 40, 19, 86, 27, 90]
+      } ;
+
+      setTimeout(() => {
+        observer.next(data);
+      }, 500);
+
+
+
+    });
+
+  }
 }
