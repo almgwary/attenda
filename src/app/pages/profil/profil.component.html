@@ -13,6 +13,22 @@
     </div>
 </div>
 
+
+<div class="row">
+    <div class="col-md-12">
+            <div style="display: block;">
+                    <canvas baseChart 
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [plugins]="barChartPlugins"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+                    </canvas>
+                  </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         <p>Debug</p>
