@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-profil',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+  constructor(private sharedData: SharedDataService) { }
 
   ngOnInit() {
+    this.sharedData.user.subscribe(
+      data=> {
+        this.user = data;
+      }
+    );
+
+    this.user = this.sharedData.user.getValue();
   }
 
 }

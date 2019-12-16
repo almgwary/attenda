@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SharedDataService } from './services/shared-data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ SharedDataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
