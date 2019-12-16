@@ -1,0 +1,15 @@
+<form  (ngSubmit)="submit()" #loginForm="ngForm">
+        <div class="form-group" >
+          <label for="id">Id</label>
+          <input type="text" 
+                name="id" 
+                required
+                [(ngModel)]="model.id"
+                class="form-control" id="id" aria-describedby="IdHelp">
+          <small id="IdHelp" class="form-text text-muted">We'll never share your Id with anyone else.</small>
+        </div>
+        <button type="submit" 
+        [disabled]="!loginForm.form.valid"
+        class="btn btn-primary" >Login</button>
+</form>
+
