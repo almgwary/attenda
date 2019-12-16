@@ -9,7 +9,10 @@
           <small id="IdHelp" class="form-text text-muted">We'll never share your Id with anyone else.</small>
         </div>
         <button type="submit" 
-        [disabled]="!loginForm.form.valid"
+        [disabled]="!loginForm.form.valid || isLoading"
         class="btn btn-primary" >Login</button>
+
+        <p *ngIf="isLoading">loading</p>
+        <code *ngIf="error">{{error}}</code>
 </form>
 

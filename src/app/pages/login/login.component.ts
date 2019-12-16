@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { SharedDataService } from 'src/app/services/shared-data.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,34 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 export class LoginComponent implements OnInit {
 
   model: User = new User();
-  constructor( private route: Router, private sharedData: SharedDataService) { }
+  isLoading = false;
+  error: string;
+  constructor(
+    private route: Router,
+    private sharedData: SharedDataService,
+    private api: ApiService) { }
 
   ngOnInit() {
   }
 
   submit() {
-    console.log('LoginComponent.submit', this.model);
-    this.sharedData.user.next(this.model);
-    this.route.navigate(['/profile']);
+    this.isLoading = true;
+    this.error = null;
+
+    this.api.login(this.model.id)
+    .subscribe(
+      (data: User) => {
+        this.isLoading = false;
+        this.sharedData.user.next(data);
+        this.route.navigate(['/profile']);
+      }, error => {
+        console.error(error);
+        this.isLoading = false;
+        this.error = 'problem with your login data 😘';
+      }
+    );
+
+
   }
 
 }

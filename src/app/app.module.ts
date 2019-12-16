@@ -9,6 +9,7 @@ import { ProfilComponent } from './pages/profil/profil.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SharedDataService } from './services/shared-data.service';
 import { AuthGuard } from './guards/auth.guard';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ SharedDataService, AuthGuard ],
+  providers: [ SharedDataService, AuthGuard, ApiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
