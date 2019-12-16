@@ -1,8 +1,17 @@
-<p>Hi {{user.id}}</p>
-
 
 <button type="button" class="btn btn-secondary" (click)="logout()">logout</button>
 
+
+<div class="row">
+    <div class="col-md-12">
+        <span class="profile-img-container">
+            <img [src]="user.img" [alt]="user.img"></span>
+    </div>
+    <div class="col-md-12">
+        <h3 class="name">{{user.name}}</h3>
+        <h3 class="id">{{user.id}}</h3>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-12">
