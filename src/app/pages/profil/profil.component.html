@@ -15,8 +15,8 @@
 
 
 <div class="row">
-    <div class="col-md-12" *ngIf="!isLoading">
-        <div style="display: block;" >
+    <div class="col-md-8 offset-2 mt-5" *ngIf="!isLoading">
+        <div class="chart-container" >
                 <canvas baseChart 
                   [datasets]="barChartData"
                   [labels]="barChartLabels"
@@ -27,24 +27,14 @@
                 </canvas>
               </div>
 
-              
-</div>
+                
+    </div>
 
 
-<div class="col-md-12" *ngIf="isLoading">
-  loading profile 
+    <div class="col-md-12" *ngIf="isLoading">
+    loading profile 
 
-          
-</div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <p>Debug</p>
-        <code>
-                Hi {{user | json}}
-        </code>
+            
     </div>
 </div>
-
 

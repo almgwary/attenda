@@ -18,7 +18,7 @@ export class ProfilComponent implements OnInit {
   };
   barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
-  barChartLegend = true;
+  barChartLegend = false;
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [ ];
