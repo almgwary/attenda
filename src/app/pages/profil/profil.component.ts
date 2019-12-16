@@ -14,12 +14,16 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
     this.sharedData.user.subscribe(
-      data=> {
+      data => {
         this.user = data;
       }
     );
 
     this.user = this.sharedData.user.getValue();
+  }
+
+  logout() {
+    this.sharedData.logout();
   }
 
 }

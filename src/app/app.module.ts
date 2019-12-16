@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SharedDataService } from './services/shared-data.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { SharedDataService } from './services/shared-data.service';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ SharedDataService ],
+  providers: [ SharedDataService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
