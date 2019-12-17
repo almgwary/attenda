@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   model: User = new User();
   isLoading = false;
   error: string;
+
   constructor(
     private route: Router,
     private sharedData: SharedDataService,
