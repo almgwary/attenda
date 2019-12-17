@@ -6,13 +6,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { ApiService } from './services/api.service';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
+import { PoweredByComponent } from './components/powered-by/powered-by.component';
 
 
 const providers = [ SharedDataService, AuthGuard, ApiService ];
 
 @NgModule({
   declarations: [
-    SpinnerComponent
+    SpinnerComponent,
+    PoweredByComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ const providers = [ SharedDataService, AuthGuard, ApiService ];
     CommonModule,
     ChartsModule,
     FormsModule,
-    SpinnerComponent
+    SpinnerComponent,
+    PoweredByComponent
   ]
 })
 export class SharedModule {
