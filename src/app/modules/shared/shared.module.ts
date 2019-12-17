@@ -19,7 +19,6 @@ const providers = [ SharedDataService, AuthGuard, ApiService ];
     ChartsModule,
     FormsModule,
   ],
-  providers,
   exports: [
     CommonModule,
     ChartsModule,
