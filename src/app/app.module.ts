@@ -1,33 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { ProfilComponent } from './pages/profil/profil.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { SharedDataService } from './services/shared-data.service';
-import { AuthGuard } from './guards/auth.guard';
-import { ApiService } from './services/api.service';
-import { SpinnerComponent } from './components/spinner/spinner.component';
+import { NotFoundComponent } from './modules/shared/pages/not-found/not-found.component';
+import { SharedModule } from './modules/shared/shared.module';
+import { LoginModule } from './modules/login/login.module';
+import { ProfileModule } from './modules/profile/profile.module';
+import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ProfilComponent,
-    NotFoundComponent,
-    SpinnerComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    ChartsModule,
-    FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule.forRoot(),
+    LoginModule,
+    ProfileModule
   ],
-  providers: [ SharedDataService, AuthGuard, ApiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
