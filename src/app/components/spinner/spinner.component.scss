@@ -1,0 +1,362 @@
+.infinity {
+
+
+  .loading_template {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+  }
+  .loading_template .loading_svg #outline {
+    stroke-dasharray: 2px, 200px;
+    stroke-dashoffset: 0;
+    animation: anim 1.6s linear infinite; }
+
+  @keyframes anim {
+    10% {
+      stroke-dasharray: 28px, 200px;
+      stroke-dashoffset: -22px; }
+    50% {
+      stroke-dasharray: 70px, 200px;
+      stroke-dashoffset: -70px; }
+    100% {
+      stroke-dasharray: 2px, 200px;
+      stroke-dashoffset: -198px; }
+  }
+
+}
+
+.man {
+
+  //$color: hsl(45, 100, 50);
+  $color: transparent;
+  $stick-color: hsl(0, 0, 20);
+  background: $color;
+  font-family: sans-serif;
+  width: 200pt;
+
+  perspective: 600px;
+
+  section.world{
+    position: absolute;
+    width: 500px;
+    height: 240px;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    box-shadow: 0 16px 10px -10px darken($color, 3%);
+    transform: translate(-50%, -50%);
+
+    div {
+      position: absolute;
+      box-sizing: border-box;
+      background: $stick-color;
+      border-radius: 2px;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+      }
+
+    }
+
+
+  }
+
+
+  // Back
+  .back {
+    bottom: 0;
+    right: -40%;
+    background: darken($color, 5%) !important
+  }
+
+  .back.one {
+    width: 30%;
+    height: 8%;
+    animation: elem 2.6s linear infinite;
+  }
+
+  .back.two {
+    width: 40%;
+    height: 16%;
+    animation: elem 3.3s linear infinite 1.6s;
+  }
+
+  .back.three {
+    width: 7%;
+    height: 24%;
+    animation: elem 2.2s linear infinite 1s;
+  }
+
+  .back.four {
+    width: 18%;
+    height: 13%;
+    animation: elem 2.8s linear infinite 0.2s;
+  }
+
+
+  .floor {
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+  }
+
+  .rock {
+    bottom: 0;
+    right: -20px;
+  }
+
+  .rock.one {
+    width: 16px;
+    height: 26px;
+    animation: elem 3s linear infinite;
+  }
+
+  .rock.two {
+    width: 20px;
+    height: 18px;
+    animation: elem 3s linear infinite 0.4s;
+  }
+
+  .rock.three {
+    width: 13px;
+    height: 26px;
+    animation: elem 3s linear infinite 1.3s;
+  }
+
+  .grass {
+    width: 2px;
+    bottom: 0;
+    right: -2px;
+  }
+
+  .grass.one {
+    height: 15px;
+    animation: elem 3s linear infinite;
+  }
+
+  .grass.two {
+    height: 10px;
+    animation: elem 3.3s linear infinite 0.2s;
+  }
+
+  .grass.three {
+    height: 18px;
+    animation: elem 2.5s linear infinite 0.4s;
+  }
+
+  .grass.four {
+    height: 5px;
+    animation: elem 2.9s linear infinite 0.6s;
+  }
+
+  .grass.five {
+    height: 7px;
+    animation: elem 3s linear infinite 0.8s;
+  }
+
+  .grass.six {
+    height: 10px;
+    animation: elem 3.1s linear infinite 1s;
+  }
+
+  .grass.seven {
+    height: 4px;
+    animation: elem 3s linear infinite 1.2s;
+  }
+
+  .grass.height {
+    height: 7px;
+    animation: elem 3s linear infinite 1.4s;
+  }
+
+  .grass.nine {
+    height: 10px;
+    animation: elem 3.1s linear infinite 1.6s;
+  }
+
+  .grass.ten {
+    height: 6px;
+    animation: elem 3s linear infinite 1.8s;
+  }
+
+
+  //.cloud {
+  //
+  //  height: 20px;
+  //  right: -160px;
+  //  background: hsla(0, 0, 100, 0.3) !important;
+  //  &::before, &::after {
+  //    background: rgb(230, 241, 255) !important;
+  //  }
+  //
+  //  &::before {
+  //    width: 80%;
+  //    height: 50%;
+  //    bottom: -25%;
+  //    left: -20%
+  //  }
+  //
+  //  &::after {
+  //    width: 60%;
+  //    height: 30%;
+  //    top: -15%;
+  //    right: -10%
+  //  }
+  //
+  //}
+
+
+  .cloud.one {
+    width: 100px;
+    top: 60px;
+    animation: cloud 3s linear infinite
+  }
+
+
+  .cloud.two{
+    width: 80px;
+    top: 20px;
+    animation: cloud 2.6s linear infinite 0.5s
+  }
+
+  .cloud.three {
+    width: 130px;
+    top: 110px;
+    animation: cloud 3.2s linear infinite 1s
+  }
+
+
+
+
+  // Stickman
+  .stick {
+    width: 6px;
+    height: 30px;
+    bottom: 30px;
+    left: 50%;
+    background: $stick-color;
+    border-radius: 3px;
+    animation: stick 3s ease-in-out infinite;
+
+    div {
+      transform-origin: 50% 0%
+    }
+
+    .left {
+      z-index: -1
+    }
+
+    .right {
+      z-index: 1
+    }
+
+    .head {
+      width: 12px;
+      height: 12px;
+      background: $stick-color;
+      border-radius: 50%;
+      transform: translate(-3px, -14px);
+    }
+
+
+    .arm {
+      width: 4px;
+      height: 14px;
+      top: 1px;
+      left: 1px;
+
+      .bottom {
+        width: 4px;
+        height: 12px;
+        bottom: -10px;
+      }
+    }
+
+
+    .leg {
+      width: 4px;
+      height: 20px;
+      bottom: -19px;
+      left: 1px;
+
+      .bottom {
+        width: 4px;
+        height: 15px;
+        bottom: -13px;
+      }
+    }
+
+  }
+
+
+  // Stickman arms/legs animations
+  .arm.left {
+    animation: run 0.8s linear infinite;
+    .bottom {   animation: arm-bottom 0.4s linear infinite  }
+  }
+
+  .arm.right {
+    animation: run 0.8s linear infinite 0.4s;
+    .bottom  {  animation: arm-bottom 0.4s linear infinite 0.4s }
+  }
+
+  .leg.left  {
+    animation: run 0.4s linear infinite;
+    .bottom {  animation: leg-bottom 0.4s linear infinite}
+  }
+
+  .leg.right  {
+    animation: run 0.4s linear infinite 0.2s;
+    .bottom  {animation: leg-bottom 0.4s linear infinite 0.2s}
+  }
+
+
+
+
+  // Keyframes
+  @keyframes cloud {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(-760px)}
+  }
+
+
+  @keyframes elem {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(-640px)}
+  }
+
+
+  @keyframes stick {
+    0%, 100% {transform: translateX(0px)}
+    30% {transform: translateX(-60px)}
+    70% {transform: translateX(20px)}
+  }
+
+
+  @keyframes run {
+    0%, 50%, 100% { transform: rotate(0deg)}
+    25% {transform: rotate(60deg)}
+    75% {transform: rotate(-60deg)}
+
+  }
+
+
+  @keyframes arm-bottom {
+    0%, 100% {transform: rotate(0deg)}
+    50% { transform: rotate(-90deg)}
+
+  }
+
+
+  @keyframes leg-bottom {
+    0%, 100% {transform: rotate(0deg)}
+    50% {transform: rotate(120deg)}
+  }
+
+
+
+
+
+}

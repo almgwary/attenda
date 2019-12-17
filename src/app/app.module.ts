@@ -11,13 +11,15 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SharedDataService } from './services/shared-data.service';
 import { AuthGuard } from './guards/auth.guard';
 import { ApiService } from './services/api.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfilComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
