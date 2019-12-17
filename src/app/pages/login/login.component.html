@@ -1,18 +1,40 @@
-<form  (ngSubmit)="submit()" #loginForm="ngForm">
-        <div class="form-group" >
-          <label for="id">Id</label>
-          <input type="text" 
-                name="id" 
-                required
-                [(ngModel)]="model.id"
-                class="form-control" id="id" aria-describedby="IdHelp">
-          <small id="IdHelp" class="form-text text-muted">We'll never share your Id with anyone else.</small>
-        </div>
-        <button type="submit" 
-        [disabled]="!loginForm.form.valid || isLoading"
-        class="btn btn-primary" >Login</button>
+<div class="row">
+  <div class="col-md-12 mt-5">
+    <h1 class="text-center title">Welcome 👋 to Attenda</h1>
+  </div>
 
-        <p *ngIf="isLoading">loading</p>
-        <code *ngIf="error">{{error}}</code>
-</form>
+  <div class="col-md-12 mt-5">
+
+
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <form  (ngSubmit)="submit()" #loginForm="ngForm">
+          <p>Login with your company ID</p>
+
+          <div class="form-group" >
+            <input type="text"
+                   name="id"
+                   min="1"
+                   maxlength="20"
+                   placeholder="A*****"
+                   required
+                   [(ngModel)]="model.id"
+                   class="form-control" id="id" >
+          </div>
+          <button type="submit"
+                  [disabled]="!loginForm.form.valid || isLoading"
+                  class="btn btn-primary" >Login</button>
+
+          <p *ngIf="isLoading">loading</p>
+          <code *ngIf="error" class="text-danger">{{error}}</code>
+        </form>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  </div>
 

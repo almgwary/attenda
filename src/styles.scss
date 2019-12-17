@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap');
+
+* {
+  font-family: 'Courier Prime', monospace;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+
+.label-btn {
+  background: #d2d2d2;
+  width: 51pt;
+  width: fit-content;
+  max-width: 100pt;
+  padding: 2pt 13pt;
+  border-radius: 26pt;
+  cursor: pointer;
+  &:hover {
+    background: #929292
+  }
+}

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
+import {Color, Label} from 'ng2-charts';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -13,13 +13,36 @@ import { ApiService } from 'src/app/services/api.service';
 export class ProfilComponent implements OnInit {
 
   user: User = new User();
-  barChartOptions: ChartOptions = {
+  barChartOptions: any = {
     responsive: true,
+    scales: {
+      xAxes: [{
+        stacked: true,
+        maxBarThickness: 20
+      }],
+      yAxes: [{
+        stacked: true
+      }],
+
+    },
+    legend: {
+      display: true,
+      position: 'top',
+      labels: {
+        fontColor: '#886ce4',
+        fontFamily: 'Courier Prime',
+        usePointStyle: true
+      }
+    },
   };
   barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
-  barChartLegend = false;
+  barChartLegend = true;
   barChartPlugins = [];
+  barChartColors: Color[] = [
+    { backgroundColor: '#f44336' },
+    { backgroundColor: '#4CAF50' },
+  ];
 
   barChartData: ChartDataSets[] = [ ];
 
@@ -53,11 +76,11 @@ export class ProfilComponent implements OnInit {
         const {days , working, breaking } = data;
         this.barChartLabels = days;
         this.barChartData = [
-          {label: 'working 👨‍💻', data: working},
           {label: 'breaking ☕', data: breaking },
-        ]
+          {label: 'working 👨‍💻', data: working},
+        ];
       }
-    )
+    );
   }
 
 }

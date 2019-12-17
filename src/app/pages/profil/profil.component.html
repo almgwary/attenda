@@ -1,15 +1,20 @@
 
-<button type="button" class="btn btn-secondary logout-btn" (click)="logout()">logout</button>
 
 
+<div class="row">
+  <div class="col-md-12">
+    <span class="label-btn logout-btn" (click)="logout()">logout 🚪 </span>
+
+  </div>
+</div>
 <div class="row">
     <div class="col-md-12 mt-3">
         <span class="profile-img-container">
             <img [src]="user.img" [alt]="user.img"></span>
     </div>
     <div class="col-md-12">
-        <h3 class="name"> ❤️  {{user.name}} 🟩</h3>
-        <span class="id">🆔 {{user.id}}</span>
+        <h3 class="name"> ❤️  {{user.name}}</h3>
+        <span class="label-btn id">🆔 {{user.id}}</span>
     </div>
 </div>
 
@@ -23,6 +28,7 @@
                   [options]="barChartOptions"
                   [plugins]="barChartPlugins"
                   [legend]="barChartLegend"
+                  [colors]="barChartColors"
                   [chartType]="barChartType">
                 </canvas>
               </div>
@@ -32,9 +38,7 @@
 
 
     <div class="col-md-12" *ngIf="isLoading">
-    loading profile 
-
-            
+     <app-spinner></app-spinner>
     </div>
 </div>
 
