@@ -1,44 +1,7 @@
 
+<app-logout (logout)="logout($event)"></app-logout>
 
+<app-user-info [user]="this.sharedData.user.getValue()"></app-user-info>
 
-<div class="row">
-  <div class="col-md-12">
-    <span class="label-btn logout-btn" (click)="logout()">logout 🚪 </span>
-
-  </div>
-</div>
-<div class="row">
-    <div class="col-md-12 mt-3">
-        <span class="profile-img-container">
-            <img [src]="user.img" [alt]="user.img"></span>
-    </div>
-    <div class="col-md-12">
-        <h3 class="name"> ❤️  {{user.name}}</h3>
-        <span class="label-btn id">🆔 {{user.id}}</span>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-md-8 offset-2 mt-5" *ngIf="!isLoading">
-        <div class="chart-container" >
-                <canvas baseChart 
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [plugins]="barChartPlugins"
-                  [legend]="barChartLegend"
-                  [colors]="barChartColors"
-                  [chartType]="barChartType">
-                </canvas>
-              </div>
-
-                
-    </div>
-
-
-    <div class="col-md-12" *ngIf="isLoading">
-     <app-spinner></app-spinner>
-    </div>
-</div>
-
+<app-user-report-chart [user]="user" [isLoading]="isLoading" [barChartColors]="barChartColors"
+                       [barChartLabels]="barChartLabels" [barChartData]="barChartData"> </app-user-report-chart>

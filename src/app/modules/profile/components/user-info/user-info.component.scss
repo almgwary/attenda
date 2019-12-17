@@ -1,0 +1,21 @@
+.profile-img-container {
+  width: 94pt;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+.name {
+  text-align: center;
+  margin: 20pt auto 10pt;
+}
+
+.id {
+  display: block;
+  margin: auto;
+}

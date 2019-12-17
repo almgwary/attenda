@@ -13,39 +13,12 @@ import { ApiService } from 'src/app/modules/shared/services/api.service';
 export class ProfilComponent implements OnInit {
 
   user: User = new User();
-  barChartOptions: any = {
-    responsive: true,
-    scales: {
-      xAxes: [{
-        stacked: true,
-        maxBarThickness: 20
-      }],
-      yAxes: [{
-        stacked: true
-      }],
-
-    },
-    legend: {
-      display: true,
-      position: 'top',
-      labels: {
-        fontColor: '#886ce4',
-        fontFamily: 'Courier Prime',
-        usePointStyle: true
-      }
-    },
-  };
   barChartLabels: Label[] = [];
-  barChartType: ChartType = 'bar';
-  barChartLegend = true;
-  barChartPlugins = [];
   barChartColors: Color[] = [
     { backgroundColor: '#f44336' },
     { backgroundColor: '#4CAF50' },
   ];
-
   barChartData: ChartDataSets[] = [ ];
-
   isLoading =  false;
 
   constructor(private sharedData: SharedDataService, private api: ApiService) { }
