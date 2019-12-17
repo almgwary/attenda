@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "serve-build": "cd dist/attenda/ && http-server",
     "build-custom":"ng build --prod --aot --build-optimizer --common-chunk   --delete-output-path --extract-css --extract-licenses=false --optimization --source-map=false --vendor-chunk=false --stats-json",
     "test": "ng test",
     "lint": "ng lint",
