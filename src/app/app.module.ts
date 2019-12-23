@@ -7,6 +7,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { LoginModule } from './modules/login/login.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import {BrowserModule} from '@angular/platform-browser';
+import {UploadModule} from "./modules/upload/upload.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {BrowserModule} from '@angular/platform-browser';
     AppRoutingModule,
     SharedModule.forRoot(),
     LoginModule,
+    UploadModule,
     ProfileModule
   ],
   bootstrap: [AppComponent]

@@ -8,9 +8,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class UserInfoComponent implements OnInit {
 
   @Input() user ;
+  imageLoaded = false;
   constructor() { }
 
   ngOnInit() {
+  }
+  picLoaded() {
+    setTimeout(() => {
+      this.imageLoaded =  true;
+    }, 1000);
   }
 
 }

@@ -6,6 +6,9 @@ import {ProfileRoutingModule} from './profile-routing.module';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UserReportChartComponent } from './components/user-report-chart/user-report-chart.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import {HttpClientModule} from "@angular/common/http";
+import {AvatarModule} from "ngx-avatar";
+import { WordsPipe } from './pipes/words.pipe';
 
 
 
@@ -14,10 +17,13 @@ import { LogoutComponent } from './components/logout/logout.component';
     ProfilComponent,
     UserInfoComponent,
     UserReportChartComponent,
-    LogoutComponent
+    LogoutComponent,
+    WordsPipe
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    AvatarModule,
     SharedModule,
     ProfileRoutingModule
   ]

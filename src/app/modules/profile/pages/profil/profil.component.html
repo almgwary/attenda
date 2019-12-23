@@ -1,7 +1,7 @@
 
 <app-logout (logout)="logout($event)"></app-logout>
 
-<app-user-info [user]="this.sharedData.user.getValue()"></app-user-info>
+<app-user-info [user]="user"></app-user-info>
 
 <app-user-report-chart [user]="user" [isLoading]="isLoading" [barChartColors]="barChartColors"
                        [barChartLabels]="barChartLabels" [barChartData]="barChartData"> </app-user-report-chart>

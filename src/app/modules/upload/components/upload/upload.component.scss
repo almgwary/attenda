@@ -1,0 +1,163 @@
+
+.text-center {
+  text-align: center;
+}
+
+
+
+$white: #ffffff;
+$color_jade_approx: #5caede;
+$color_salem_approx: #4685ab;
+$color_eucalyptus_approx: #35b3ff;
+$color_log_cabin_approx: #222;
+$color_valencia_approx: #cd4535;
+$color_roof_terracotta_approx: #b02818;
+$color_flush_mahogany_approx: #c13b2a;
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 2px dashed $color_jade_approx;
+  position: relative;
+  &:hover {
+    background-color: $color_jade_approx;
+    border: 2px dashed $white;
+
+    .drag-text {
+      h3 {
+        color: $white;
+      }
+    }
+  }
+}
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+.drag-text {
+  text-align: center;
+  h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: $color_salem_approx;
+    padding: 60px 0;
+  }
+}
+
+ :host{
+  background-color: $white;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .file-upload-btn {
+    width: 100%;
+    margin: 0;
+    color: $white;
+    background: $color_jade_approx;
+    border: none;
+    padding: 10px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    border-bottom: 4px solid $color_salem_approx;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover {
+      background: $color_eucalyptus_approx;
+      color: $white;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    &:active {
+      border: 0;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .2s ease;
+    }
+  }
+  .file-upload-content {
+    // display: none;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px dashed $color_jade_approx;
+  }
+
+  .image-dropping {
+    background-color: $color_jade_approx;
+    border: 4px dashed $white;
+  }
+  .image-title-wrap {
+    padding: 0 15px 15px;
+    color: $color_log_cabin_approx;
+    text-align: center;
+
+    .file-name {
+      color: $color_jade_approx;
+      font-weight: 800;
+    }
+  }
+
+  .file-upload-image, spinner {
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+  }
+  .remove-image {
+    width: 200px;
+    margin: 0;
+    color: $white;
+    background: $color_valencia_approx;
+    border: none;
+    padding: 10px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    border-bottom: 4px solid $color_roof_terracotta_approx;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover {
+      background: $color_flush_mahogany_approx;
+      color: $white;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    &:active {
+      border: 0;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .2s ease;
+    }
+  }
+
+  .file-actions{
+    text-align: center;
+    button {
+      margin:10pt;
+    }
+  }
+}
+
+
+.file-type-select{
+  display: block;
+  margin: auto;
+  text-align: center;
+
+  p{
+    display: block;
+  }
+  button{
+    margin: 10pt ;
+  }
+}

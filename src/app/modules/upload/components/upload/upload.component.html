@@ -1,0 +1,22 @@
+
+<div class="image-upload-wrap" >
+  <input class="file-upload-input" type='file'
+         (drop)="drop($event)"
+         (dragover)="allowDrop($event)"
+         (change)="onfileSelect($event.target.files)"/>
+
+  <div class="drag-text">
+    <h3>Drag and drop file or select one</h3>
+  </div>
+</div>
+<div class="file-upload-content" *ngIf="file">
+  <img class="file-upload-image"  src="https://image.flaticon.com/icons/svg/303/303850.svg" alt="file" />
+
+  <div class="image-title-wrap">
+    <span class="file-name"> {{file.name}}  </span> - <span class="file-size">{{file.size / 1000}}KB</span>
+  </div>
+</div>
+
+
+
+

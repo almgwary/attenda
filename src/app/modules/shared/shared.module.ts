@@ -7,9 +7,10 @@ import { ApiService } from './services/api.service';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { PoweredByComponent } from './components/powered-by/powered-by.component';
+import {AttendanceLoadedGuard} from './guards/attendance-loaded.guard';
 
 
-const providers = [ SharedDataService, AuthGuard, ApiService ];
+const providers = [ SharedDataService, AuthGuard, ApiService, AttendanceLoadedGuard ];
 
 @NgModule({
   declarations: [

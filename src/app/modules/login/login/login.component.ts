@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/modules/shared/services/api.service';
 })
 export class LoginComponent implements OnInit {
 
-  model: User = new User();
+  userId;
   isLoading = false;
   error: string;
 
@@ -21,18 +21,22 @@ export class LoginComponent implements OnInit {
     private api: ApiService) { }
 
   ngOnInit() {
+    console.log(('login page'));
   }
 
-  submit() {
+  submit(userId) {
     this.isLoading = true;
     this.error = null;
-
-    this.api.login(this.model.id)
+    console.log(userId);
+    this.api.login(userId)
     .subscribe(
-      (data: User) => {
+      (data: string) => {
+
+        console.log(userId);
+
         this.isLoading = false;
-        this.sharedData.user.next(data);
-        this.route.navigate(['/profile']);
+        this.sharedData.userId.next(userId);
+        this.route.navigate(['/upload']);
       }, error => {
         console.error(error);
         this.isLoading = false;

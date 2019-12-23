@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { User } from 'src/app/modules/shared/models/user';
 import { SharedDataService } from 'src/app/modules/shared/services/shared-data.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import {Color, Label} from 'ng2-charts';
 import { ApiService } from 'src/app/modules/shared/services/api.service';
+import {Observable, Subject} from "rxjs";
+import {Subscription} from "rxjs/src/internal/Subscription";
 
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.scss']
 })
-export class ProfilComponent implements OnInit {
+export class ProfilComponent implements OnInit, OnDestroy {
 
-  user: User = new User();
+  userId: string ;
+  user: any ;
   barChartLabels: Label[] = [];
   barChartColors: Color[] = [
     { backgroundColor: '#f44336' },
@@ -20,19 +23,25 @@ export class ProfilComponent implements OnInit {
   ];
   barChartData: ChartDataSets[] = [ ];
   isLoading =  false;
-
+  sub: Subscription[] = [];
   constructor(private sharedData: SharedDataService, private api: ApiService) { }
 
   ngOnInit() {
-    this.sharedData.user.subscribe(
-      data => {
-        this.user = data;
-        this.loadProfileData();
+    const sub: any = this.sharedData.userId.subscribe(
+      userId => {
+        this.userId = userId;
+        if ( userId ) {
+          this.loadProfileData();
+        }
       }
     );
-
-    this.user = this.sharedData.user.getValue();
+    this.sub.push(sub)
+    this.userId = this.sharedData.userId.getValue();
     this.loadProfileData();
+  }
+
+  ngOnDestroy() {
+    this.sub.forEach(sub => sub.unsubscribe());
   }
 
   logout() {
@@ -41,12 +50,13 @@ export class ProfilComponent implements OnInit {
 
   loadProfileData() {
     this.isLoading = true;
-    this.api.getProfileData(this.user.id)
+    this.api.getProfileData(this.userId)
     .subscribe(
-      (data: any ) => {
+      (user: any ) => {
         this.isLoading = false;
 
-        const {days , working, breaking } = data;
+        const {days , working, breaking } = user.chartData;
+        this.user = user;
         this.barChartLabels = days;
         this.barChartData = [
           {label: 'breaking ☕', data: breaking },

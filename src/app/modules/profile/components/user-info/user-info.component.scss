@@ -2,11 +2,27 @@
   width: 94pt;
   display: block;
   margin: auto;
-  border-radius: 50%;
+  border-radius: 17%;
   overflow: hidden;
+  cursor: pointer;
 
+  * {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  }
   img {
     width: 100%;
+  }
+
+  ngx-avatar {
+    width: 100%;
+
+    ::ng-deep {
+      .avatar-container {
+        display: block;
+        margin: auto;
+      }
+    }
   }
 }
 
@@ -16,6 +32,6 @@
 }
 
 .id {
-  display: block;
-  margin: auto;
+  display: inline-block;
 }
+

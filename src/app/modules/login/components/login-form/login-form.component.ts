@@ -8,7 +8,7 @@ import {User} from '../../../shared/models/user';
 })
 export class LoginFormComponent implements OnInit {
 
-  @Input()model: User = new User();
+  @Input()userId: string;
   @Input()isLoading = false;
   @Input()error: string;
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
@@ -18,9 +18,8 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
 
- 
   onSubmit() {
-    this.submitForm.emit(this.model);
+    this.submitForm.emit(this.userId);
   }
 
 }
