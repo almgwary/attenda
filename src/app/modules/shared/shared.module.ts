@@ -8,6 +8,9 @@ import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { PoweredByComponent } from './components/powered-by/powered-by.component';
 import {AttendanceLoadedGuard} from './guards/attendance-loaded.guard';
+import { ToEmailPipe } from './pipes/to-email.pipe';
+import { EmailToPipe } from './pipes/email-to.pipe';
+import { ImgDirective } from './directives/img.directive';
 
 
 const providers = [ SharedDataService, AuthGuard, ApiService, AttendanceLoadedGuard ];
@@ -15,7 +18,10 @@ const providers = [ SharedDataService, AuthGuard, ApiService, AttendanceLoadedGu
 @NgModule({
   declarations: [
     SpinnerComponent,
-    PoweredByComponent
+    PoweredByComponent,
+    ToEmailPipe,
+    EmailToPipe,
+    ImgDirective
   ],
   imports: [
     CommonModule,
@@ -27,7 +33,10 @@ const providers = [ SharedDataService, AuthGuard, ApiService, AttendanceLoadedGu
     ChartsModule,
     FormsModule,
     SpinnerComponent,
-    PoweredByComponent
+    PoweredByComponent,
+    ToEmailPipe,
+    EmailToPipe,
+    ImgDirective
   ]
 })
 export class SharedModule {

@@ -1,12 +1,22 @@
 <div class="row">
   <div class="col-md-12 mt-5">
+
+  <img class="smart-img"  
+  *ngFor="let number of numbers"
+  src="assets/img-1.jpg?e={{number}}" alt="">
+    
     <app-login-welcome></app-login-welcome>
   </div>
-
+ 
   <div class="col-md-12 mt-5">
     <app-login-form
       [userId]="userId" [isLoading]="isLoading" [error]="error"  (submitForm)="submit($event)"  ></app-login-form>
   </div>
+
+  <div [innerHtml]="'play' | toEmail | emailTo"></div>
+  <br>
+
+ 
 
 </div>
 

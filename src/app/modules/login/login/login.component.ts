@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   userId;
   isLoading = false;
   error: string;
-
+  numbers=[...Array(100).keys()]
   constructor(
     private route: Router,
     private sharedData: SharedDataService,
